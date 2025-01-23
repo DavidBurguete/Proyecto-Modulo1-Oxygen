@@ -6,6 +6,52 @@
 
 body {
   min-width: 320px;
+  font-family: Open Sans;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Raleway;
+}
+
+#header {
+  position: sticky;
+  top: 0;
+  background-color: #FFFFFF;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2901960784);
+}
+
+h1 {
+  color: #08A6E4;
+  margin: 17px 25px;
+  position: relative;
+  display: inline-block;
+}
+
+nav {
+  text-transform: uppercase;
+  display: none;
+}
+
+#burger_menu {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 12px;
+  top: 29px;
+  right: 40px;
+}
+#burger_menu div {
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: #07ACE6;
+  top: 5px;
+}
+#burger_menu :first-child {
+  top: 0;
+}
+#burger_menu :last-child {
+  top: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

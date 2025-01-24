@@ -1,8 +1,31 @@
-$logo_blue: #08A6E4;
+@use 'mixins';
+
+$main_blue: #08A6E4;
+$main_red: #FB3B64;
+$main_turquoise: #55DFB4;
 $blue: #07ACE6;
 $white: #FFFFFF;
 $black: #000000;
-$m-b: 20px !important;
+$m-b: 20px;
+$w-70: 70%;
+$circle: 62.75px;
+
+%m-0-auto{
+    margin: 0 auto;
+}
+
+%img_positioning{
+    position: absolute;
+    display: inline-block;
+    left: calc(50% - ($circle/2) + 12px);
+}
+
+$img-w: 193px;
+%benefits-img{
+    position: absolute;
+    width: $img-w;
+    left: calc(50% - $img-w/2 - 20px);
+}
 
 //General css
 
@@ -24,7 +47,7 @@ h1, h2, h3, h4, h5 {
 
 //Header css
 
-#header{
+header{
     position: sticky;
     top: 0;
     background-color: $white;
@@ -34,7 +57,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1{
-    color: $logo_blue;
+    color: $main_blue;
     margin: 17px 25px;
     position: relative;
     display: inline-block;
@@ -78,14 +101,14 @@ main{
 }
 
 .div--elements-centered{
-    margin: 0 auto;
-    width: 70%;
+    @extend %m-0-auto;
+    width: $w-70;
 
     :nth-child(n){
         display: block;
         position: relative;
-        margin: 0 auto;
-        margin-bottom: $m-b;
+        @extend %m-0-auto;
+        margin-bottom: $m-b !important;
     }
 
     h2{
@@ -112,10 +135,153 @@ main{
 }
 
 #laptop{
+    @extend %m-0-auto;
     position: relative;
     height: 267px;
-    margin: 0 auto;
     background: center no-repeat url(https://s3-alpha-sig.figma.com/img/c3f9/6a42/6648411f57f04aff84de5d247f55d2a8?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JjMcR0dAcKxv9cxAUdNtoLsalHY4RELkBrC4HXweblehMyePAiFeoRz4ZbFG5IbAG3vnLsDQHIHJV~I9BYFOFcnVLSoipz-fL32tZ4N9jkoLKA5CjId-7iOgDXWofz44mjiLTjRhmUCmemy86mlqwZ4aT~73Hzw1Rdn6BnJdPM8O7mE8-NyxjaAIcLkls6Npm4g5f8TNN2BNC7tEmxnTXrXeXPLakG9grgv4~LNW~Vk3slZcNjLfgn~blh7kPZAQQOwqnTniDSfSHurNmDtaktycK7OJGv0H0iuc041OsGaKTM0oSJ9jrJCnoIB7VUzG64xgqxRmOktuog0y-hCcSw__);
+    margin-bottom: $m-b;
+}
+
+#whyus{
+    width: $w-70;
+    @extend %m-0-auto;
+
+    h3{
+        font-weight: 300;
+        font-size: 30px;
+        margin-bottom: $m-b;
+    }
+}
+
+.div--items{
+    width: 200px;
+    @extend %m-0-auto;
+    margin-bottom: $m-b;
+
+    >div{
+        height: $circle;
+        margin-bottom: $m-b;
+    }
+
+    h4{
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: 6px;
+    }
+
+    h5{
+        font-weight: 400;
+        font-size: 17px;
+        color: #A5A5A5;
+        margin-bottom: $m-b;
+    }
+}
+
+.img--person-size{
+    @extend %img_positioning;
+    margin-top: 5px;
+}
+
+.div--person-background_color{
+    @include mixins.circle($circle, $main_red);
+    display: inline-block;
+    left: calc(50% - ($circle/2) - 15px);
+}
+
+.img--eye-size{
+    @extend %img_positioning;
+    margin-top: 15px;
+}
+
+.div--eye-background_color{
+    @include mixins.circle($circle, $main_blue);
+    display: inline-block;
+    left: calc(50% - ($circle/2) - 15px);
+}
+
+.img--catalog-size{
+    @extend %img_positioning;
+    margin-top: 5px;
+}
+
+.div--catalog-background_color{
+    @include mixins.circle($circle, $main_turquoise);
+    display: inline-block;
+    left: calc(50% - ($circle/2) - 15px);
+}
+
+$benefits-left-size: 18.31px;
+#benefits{
+    background-color: #F7F7F7;
+    padding: $benefits-left-size;
+}
+
+.div--content-display{
+    text-align: left;
+    background-color: $white;
+    border: 1px solid #E8E9ED;
+    border-radius: 5px;
+    margin: 0 auto $m-b auto;
+
+    &>:nth-child(n){
+        margin: 30px;
+    }
+
+    img{
+        @extend %m-0-auto;
+    }
+
+    h3{
+        font-weight: 400;
+        font-size: 30px;
+        margin-bottom: $m-b;
+    }
+
+    p{
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: $m-b;
+    }
+}
+
+.div--display-height{
+    height: 110px;
+}
+
+.macBook{
+    @extend %benefits-img;
+    margin-top: 10px !important;
+}
+
+.iphone{
+    @extend %benefits-img;
+    left: calc(50% - $img-w/2 + 30px);
+    margin-top: -10px !important;
+}
+
+.cornet{
+    @extend %benefits-img;
+    margin-top: 20px !important;
+}
+
+.div--background-rotate{
+    @include mixins.circle(90.12px, $main_red, 41px);
+    rotate: 45deg;
+    left: 50%;
+    margin-top: -10px;
+}
+
+$iphone-bg-size: 140px;
+.div--background-center_blue{
+    @include mixins.circle($iphone-bg-size, $main_blue);
+    left: calc(50% - $iphone-bg-size/2);
+    margin-top: -15px;
+}
+
+.div--background-green_rectangle{
+    @include mixins.circle($iphone-bg-size, $main_turquoise, 5px);
+    width: calc(100% - $benefits-left-size*2);
+    left: $benefits-left-size;
 }
 
 //Footer css

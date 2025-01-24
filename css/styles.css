@@ -1,3 +1,19 @@
+.div--content-display img, .div--items, #whyus, #laptop, .div--elements-centered :nth-child(n), .div--elements-centered {
+  margin: 0 auto;
+}
+
+.img--catalog-size, .img--eye-size, .img--person-size {
+  position: absolute;
+  display: inline-block;
+  left: calc(50% - 31.375px + 12px);
+}
+
+.cornet, .iphone, .macBook {
+  position: absolute;
+  width: 193px;
+  left: calc(50% - 96.5px - 20px);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,7 +30,7 @@ h1, h2, h3, h4, h5 {
   font-family: Raleway;
 }
 
-#header {
+header {
   position: sticky;
   top: 0;
   background-color: #FFFFFF;
@@ -63,13 +79,11 @@ main {
 }
 
 .div--elements-centered {
-  margin: 0 auto;
   width: 70%;
 }
 .div--elements-centered :nth-child(n) {
   display: block;
   position: relative;
-  margin: 0 auto;
   margin-bottom: 20px !important;
 }
 .div--elements-centered h2 {
@@ -95,8 +109,153 @@ main {
 #laptop {
   position: relative;
   height: 267px;
-  margin: 0 auto;
   background: center no-repeat url(https://s3-alpha-sig.figma.com/img/c3f9/6a42/6648411f57f04aff84de5d247f55d2a8?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JjMcR0dAcKxv9cxAUdNtoLsalHY4RELkBrC4HXweblehMyePAiFeoRz4ZbFG5IbAG3vnLsDQHIHJV~I9BYFOFcnVLSoipz-fL32tZ4N9jkoLKA5CjId-7iOgDXWofz44mjiLTjRhmUCmemy86mlqwZ4aT~73Hzw1Rdn6BnJdPM8O7mE8-NyxjaAIcLkls6Npm4g5f8TNN2BNC7tEmxnTXrXeXPLakG9grgv4~LNW~Vk3slZcNjLfgn~blh7kPZAQQOwqnTniDSfSHurNmDtaktycK7OJGv0H0iuc041OsGaKTM0oSJ9jrJCnoIB7VUzG64xgqxRmOktuog0y-hCcSw__);
+  margin-bottom: 20px;
+}
+
+#whyus {
+  width: 70%;
+}
+#whyus h3 {
+  font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.div--items {
+  width: 200px;
+  margin-bottom: 20px;
+}
+.div--items > div {
+  height: 62.75px;
+  margin-bottom: 20px;
+}
+.div--items h4 {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 6px;
+}
+.div--items h5 {
+  font-weight: 400;
+  font-size: 17px;
+  color: #A5A5A5;
+  margin-bottom: 20px;
+}
+
+.img--person-size {
+  margin-top: 5px;
+}
+
+.div--person-background_color {
+  position: absolute;
+  width: 62.75px;
+  height: 62.75px;
+  border-radius: 99px;
+  background-color: #FB3B64;
+  display: inline-block;
+  left: calc(50% - 31.375px - 15px);
+}
+
+.img--eye-size {
+  margin-top: 15px;
+}
+
+.div--eye-background_color {
+  position: absolute;
+  width: 62.75px;
+  height: 62.75px;
+  border-radius: 99px;
+  background-color: #08A6E4;
+  display: inline-block;
+  left: calc(50% - 31.375px - 15px);
+}
+
+.img--catalog-size {
+  margin-top: 5px;
+}
+
+.div--catalog-background_color {
+  position: absolute;
+  width: 62.75px;
+  height: 62.75px;
+  border-radius: 99px;
+  background-color: #55DFB4;
+  display: inline-block;
+  left: calc(50% - 31.375px - 15px);
+}
+
+#benefits {
+  background-color: #F7F7F7;
+  padding: 18.31px;
+}
+
+.div--content-display {
+  text-align: left;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E9ED;
+  border-radius: 5px;
+  margin: 0 auto 20px auto;
+}
+.div--content-display > :nth-child(n) {
+  margin: 30px;
+}
+.div--content-display h3 {
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.div--content-display p {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.div--display-height {
+  height: 110px;
+}
+
+.macBook {
+  margin-top: 10px !important;
+}
+
+.iphone {
+  left: calc(50% - 96.5px + 30px);
+  margin-top: -10px !important;
+}
+
+.cornet {
+  margin-top: 20px !important;
+}
+
+.div--background-rotate {
+  position: absolute;
+  width: 90.12px;
+  height: 90.12px;
+  border-radius: 41px;
+  background-color: #FB3B64;
+  rotate: 45deg;
+  left: 50%;
+  margin-top: -10px;
+}
+
+.div--background-center_blue {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 99px;
+  background-color: #08A6E4;
+  left: calc(50% - 70px);
+  margin-top: -15px;
+}
+
+.div--background-green_rectangle {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 5px;
+  background-color: #55DFB4;
+  width: calc(100% - 36.62px);
+  left: 18.31px;
 }
 
 /*# sourceMappingURL=styles.css.map */

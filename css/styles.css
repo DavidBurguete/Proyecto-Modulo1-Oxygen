@@ -187,6 +187,7 @@ main {
 #benefits {
   background-color: #F7F7F7;
   padding: 18.31px;
+  margin-bottom: 50px;
 }
 
 .div--content-display {
@@ -256,6 +257,164 @@ main {
   background-color: #55DFB4;
   width: calc(100% - 36.62px);
   left: 18.31px;
+}
+
+.h2--text-style {
+  font-weight: 400;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#prices {
+  position: relative;
+}
+
+.div--basic-border {
+  border: 1px solid #FB3B64;
+  border-radius: 18px;
+  width: 80%;
+  margin: 0 auto 40px auto;
+  position: relative;
+}
+
+.div--professional-border {
+  border: 1px solid #08A6E4;
+  border-radius: 18px;
+  width: 80%;
+  margin: 0 auto 40px auto;
+  position: relative;
+}
+
+.div--premium-border {
+  border: 1px solid #55DFB4;
+  border-radius: 18px;
+  width: 80%;
+  margin: 0 auto 40px auto;
+  position: relative;
+}
+
+.div--plan {
+  display: inline-block;
+  margin: 10px;
+}
+
+.div--basic_plan-type {
+  position: relative;
+  display: inline-block;
+  width: 35%;
+  bottom: 27px;
+}
+.div--basic_plan-type h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+.div--basic_plan-type p {
+  color: #FB3B64;
+  font-weight: 300;
+  font-size: 46px;
+}
+.div--basic_plan-type h4 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.div--professional_plan-type {
+  position: relative;
+  display: inline-block;
+  width: 35%;
+  bottom: 20px;
+}
+.div--professional_plan-type h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+.div--professional_plan-type p {
+  color: #08A6E4;
+  font-weight: 300;
+  font-size: 46px;
+}
+.div--professional_plan-type h4 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.div--premium_plan-type {
+  position: relative;
+  display: inline-block;
+  width: 35%;
+  bottom: 20px;
+}
+.div--premium_plan-type h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+.div--premium_plan-type p {
+  color: #55DFB4;
+  font-weight: 300;
+  font-size: 46px;
+}
+.div--premium_plan-type h4 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.div--plan-specifications {
+  position: relative;
+  top: 10px;
+  width: 50%;
+}
+.div--plan-specifications > div {
+  width: 100%;
+}
+.div--plan-specifications p {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+  width: 85%;
+  margin: 10px 0 10px 4px;
+}
+
+.div--basic-begin {
+  position: relative;
+  border-radius: 99px;
+  top: 25px;
+  height: 50px;
+  width: 50%;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  background-color: #FB3B64;
+  margin: 0 auto;
+  border: 0;
+}
+
+.div--professional-begin {
+  position: relative;
+  border-radius: 99px;
+  top: 25px;
+  height: 50px;
+  width: 50%;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  background-color: #08A6E4;
+  margin: 0 auto;
+  border: 0;
+}
+
+.div--premium-begin {
+  position: relative;
+  border-radius: 99px;
+  top: 25px;
+  height: 50px;
+  width: 50%;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  background-color: #55DFB4;
+  margin: 0 auto;
+  border: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -214,6 +214,7 @@ $benefits-left-size: 18.31px;
 #benefits{
     background-color: #F7F7F7;
     padding: $benefits-left-size;
+    margin-bottom: 50px;
 }
 
 .div--content-display{
@@ -282,6 +283,80 @@ $iphone-bg-size: 140px;
     @include mixins.circle($iphone-bg-size, $main_turquoise, 5px);
     width: calc(100% - $benefits-left-size*2);
     left: $benefits-left-size;
+}
+
+.h2--text-style{
+    font-weight: 400;
+    font-size: 36px;
+    margin-bottom: $m-b;
+}
+
+#prices{
+    position: relative;
+    
+}
+
+.div--basic-border{
+    @include mixins.card($main_red);
+}
+
+.div--professional-border{
+    @include mixins.card($main_blue);
+}
+
+.div--premium-border{
+    @include mixins.card($main_turquoise);
+}
+
+.div--plan{
+    display: inline-block;
+    margin: 10px;
+}
+
+.div--basic_plan-type{
+    @include mixins.plan-type($main_red);
+    bottom: 27px;
+}
+
+.div--professional_plan-type{
+    @include mixins.plan-type($main_blue);
+    bottom: 20px;
+}
+
+.div--premium_plan-type{
+    @include mixins.plan-type($main_turquoise);
+    bottom: 20px;
+}
+
+.div--plan-specifications{
+    position: relative;
+    top: 10px;
+    width: 50%;
+
+    &>div{
+        width: 100%;
+    }
+
+    p{
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: left;
+        width: 85%;
+        margin: 10px 0 10px 4px;
+    }
+}
+
+.div--basic-begin{
+    @include mixins.begin-plan($main_red);
+}
+
+.div--professional-begin{
+    @include mixins.begin-plan($main_blue);
+}
+
+.div--premium-begin{
+    @include mixins.begin-plan($main_turquoise);
 }
 
 //Footer css

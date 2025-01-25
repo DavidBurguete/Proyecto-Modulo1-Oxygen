@@ -5,3 +5,47 @@
     border-radius: $radius;
     background-color: $color;
 }
+
+@mixin card($color, $radius: 18px){
+    border: 1px solid $color;
+    border-radius: $radius;
+    width: 80%;
+    margin: 0 auto 40px auto;
+    position: relative;
+}
+
+@mixin plan-type($color){
+    position: relative;
+    display: inline-block;
+    width: 35%;
+
+    h3{
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    p{
+        color: $color;
+        font-weight: 300;
+        font-size: 46px;
+    }
+
+    h4{
+        font-weight: 700;
+        font-size: 12px;
+    }
+}
+
+@mixin begin-plan($color, $height: 50px){
+    position: relative;
+    border-radius: 99px;
+    top: $height/2;
+    height: $height;
+    width: 50%;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    background-color: $color;
+    margin: 0 auto;
+    border: 0;
+}

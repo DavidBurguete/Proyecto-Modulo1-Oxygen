@@ -417,4 +417,100 @@ main {
   border: 0;
 }
 
+#contact {
+  text-align: left;
+  margin: 30px;
+}
+#contact h2 {
+  font-weight: 400;
+  font-size: 40px;
+}
+#contact p {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.div--contact-alignement {
+  height: 30px;
+  margin: 2px;
+}
+.div--contact-alignement :nth-child(n) {
+  display: inline-block;
+}
+.div--contact-alignement div {
+  height: 27px;
+  width: 27px;
+}
+.div--contact-alignement p {
+  margin: auto;
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  color: #A5A5A5;
+  padding: 5px;
+  bottom: 8px;
+}
+.div--contact-alignement:last-child {
+  margin-bottom: 40px;
+}
+
+form label {
+  display: inline-block;
+  width: 100%;
+  color: #08A6E4;
+}
+form input:not([type*=checkbox]), form input:not([type*=checkbox]):focus-visible {
+  width: 100%;
+  height: 40px;
+  border: 0;
+  border-bottom: 1px solid #95989A;
+  margin-bottom: 20px;
+  outline: none;
+}
+form input[type*=checkbox] {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  margin: 10px;
+  z-index: 5;
+  display: none;
+}
+form span.checkmark {
+  position: absolute;
+  display: inline-block;
+  border: 1px solid #95989A;
+  height: 24px;
+  width: 24px;
+  border-radius: 4px;
+  margin: 10px;
+}
+form .label--policy {
+  position: relative;
+  color: #707070;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16.34px;
+  display: inline-block;
+  width: calc(100% - 54px);
+  left: 54px;
+}
+form input[type*=submit] {
+  position: relative;
+  border-radius: 99px;
+  top: 25px;
+  height: 50px;
+  width: 50%;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  background-color: #08A6E4;
+  margin: 0 auto;
+  border: 0;
+  top: 0;
+  width: 70%;
+  margin: 20px;
+  left: 20%;
+}
+
 /*# sourceMappingURL=styles.css.map */

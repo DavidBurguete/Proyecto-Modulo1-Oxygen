@@ -36,7 +36,7 @@
     }
 }
 
-@mixin begin-plan($color, $height: 50px){
+@mixin proceed-button($color, $height: 50px){
     position: relative;
     border-radius: 99px;
     top: $height/2;

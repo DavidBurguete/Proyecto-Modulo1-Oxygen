@@ -74,7 +74,7 @@ nav {
 }
 
 main {
-  top: 100px;
+  margin-top: 100px;
   position: relative;
 }
 
@@ -419,7 +419,7 @@ main {
 
 #contact {
   text-align: left;
-  margin: 30px;
+  margin: 0 30px;
 }
 #contact h2 {
   font-weight: 400;
@@ -511,6 +511,44 @@ form input[type*=submit] {
   width: 70%;
   margin: 20px;
   left: 20%;
+  box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.2901960784);
+}
+
+footer {
+  position: relative;
+  background-color: #F7F7F7;
+  margin-top: 20px;
+  box-shadow: 0px -5px 40px 0px rgba(0, 0, 0, 0.2);
+}
+footer .copyright {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 30px 15px;
+  position: relative;
+  text-align: justify;
+  width: 100%;
+}
+footer .copyright h2 {
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 30px;
+  color: #08A6E4;
+}
+footer .copyright p {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 14.98px;
+  color: #A5A5A5;
+}
+footer .social_media {
+  position: absolute;
+  display: inline-block;
+  right: 17px;
+  bottom: 35px;
+}
+footer .social_media a {
+  padding: 10px;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

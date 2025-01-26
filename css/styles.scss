@@ -96,7 +96,7 @@ nav{
 //Main css
 
 main{
-    top: 100px;
+    margin-top: 100px;
     position: relative;
 }
 
@@ -361,7 +361,7 @@ $iphone-bg-size: 140px;
 
 #contact{
     text-align: left;
-    margin: 30px;
+    margin: 0 30px;
 
     h2{
         font-weight: 400;
@@ -460,7 +460,50 @@ form{
         width: 70%;
         margin: 20px;
         left: 20%;
+        box-shadow: 5px 10px 14px 0px #07ACE64A;
     }
 }
 
 //Footer css
+
+footer{
+    position: relative;
+    background-color: #F7F7F7;
+    margin-top: $m-b;
+    box-shadow: 0px -5px 40px 0px #00000033;
+
+    .copyright{
+        box-sizing: border-box;
+        display: inline-block;
+        padding: 30px 15px;
+        position: relative;
+        text-align: justify;
+        width: 100%;
+
+        h2{
+            font-weight: 300;
+            font-size: 26px;
+            line-height: 30px;
+            color: $main_blue;
+        }
+
+        p{
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 14.98px;
+            color: #A5A5A5;
+        }
+    }
+
+    .social_media{
+        position: absolute;
+        display: inline-block;
+        right: 17px;
+        bottom: 35px;
+
+        a{
+            padding: 10px;
+            text-decoration: none;
+        }
+    }
+}

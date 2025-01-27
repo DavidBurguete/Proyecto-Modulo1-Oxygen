@@ -1,0 +1,67 @@
+#whyus{
+    width: $w-70;
+    @extend %m-0-auto;
+
+    h3{
+        font-weight: 300;
+        font-size: 30px;
+        margin-bottom: $m-b;
+    }
+}
+
+.div--items{
+    width: 200px;
+    @extend %m-0-auto;
+    margin-bottom: $m-b;
+
+    >div{
+        height: $circle;
+        margin-bottom: $m-b;
+    }
+
+    h4{
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: 6px;
+    }
+
+    h5{
+        font-weight: 400;
+        font-size: 17px;
+        color: $gray;
+        margin-bottom: $m-b;
+    }
+}
+
+.img--person-size{
+    @extend %img_positioning;
+    margin-top: 5px;
+}
+
+.div--person-background_color{
+    @include mixins.circle($circle, $main_red);
+    display: inline-block;
+    left: calc(50% - ($circle/2) - 15px);
+}
+
+.img--eye-size{
+    @extend %img_positioning;
+    margin-top: 15px;
+}
+
+.div--eye-background_color{
+    @include mixins.circle($circle, $main_blue);
+    display: inline-block;
+    left: calc(50% - ($circle/2) - 15px);
+}
+
+.img--catalog-size{
+    @extend %img_positioning;
+    margin-top: 5px;
+}
+
+.div--catalog-background_color{
+    @include mixins.circle($circle, $main_turquoise);
+    display: inline-block;
+    left: calc(50% - ($circle/2) - 15px);
+}

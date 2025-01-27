@@ -1,0 +1,45 @@
+#contact{
+    text-align: left;
+    margin: 0 30px;
+
+    h2{
+        font-weight: 400;
+        font-size: 40px;
+    }
+
+    p{
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: $m-b;
+    }
+}
+
+.div--contact-alignement{
+    height: 30px;
+    margin: 2px;
+
+    :nth-child(n){
+        display: inline-block;
+    }
+
+    div{
+        height: 27px;
+        width: 27px;
+    }
+
+    p{
+        margin: auto;
+        position: relative;
+        font-weight: 600;
+        font-size: 16px;
+        color: $gray;
+        padding: 5px;
+        bottom: 8px;
+    }
+
+    &:last-child{
+        margin-bottom: 40px;
+    }
+}
+
+@import 'form';

@@ -1,0 +1,61 @@
+.div--elements-centered{
+    @extend %m-0-auto;
+    width: $w-70;
+
+    :nth-child(n){
+        display: block;
+        position: relative;
+        @extend %m-0-auto;
+        margin-bottom: $m-b !important;
+    }
+
+    h2{
+        font-weight: 400;
+        font-size: 35px;
+    }
+
+    p{
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    button{
+        max-width: 440px;
+        width: 100%;
+        padding: 20px;
+        background-color: $blue;
+        color: $white;
+        border: 0;
+        border-radius: 40px;
+        box-shadow: 5px 10px 14px 0px #07ACE64A;
+        font-weight: 700;
+        font-size: 16px;
+    }
+}
+
+#laptop{
+    @extend %m-0-auto;
+    position: relative;
+    height: 267px;
+    background: center no-repeat url(https://s3-alpha-sig.figma.com/img/c3f9/6a42/6648411f57f04aff84de5d247f55d2a8?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JjMcR0dAcKxv9cxAUdNtoLsalHY4RELkBrC4HXweblehMyePAiFeoRz4ZbFG5IbAG3vnLsDQHIHJV~I9BYFOFcnVLSoipz-fL32tZ4N9jkoLKA5CjId-7iOgDXWofz44mjiLTjRhmUCmemy86mlqwZ4aT~73Hzw1Rdn6BnJdPM8O7mE8-NyxjaAIcLkls6Npm4g5f8TNN2BNC7tEmxnTXrXeXPLakG9grgv4~LNW~Vk3slZcNjLfgn~blh7kPZAQQOwqnTniDSfSHurNmDtaktycK7OJGv0H0iuc041OsGaKTM0oSJ9jrJCnoIB7VUzG64xgqxRmOktuog0y-hCcSw__);
+    margin-bottom: $m-b;
+
+    img{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #laptop{
+        display: flex;
+        justify-content: center;
+        height: 600px;
+        width: 100%;
+        background: none;
+        overflow: hidden;
+
+        img{
+            display: flex;
+        }
+    }
+}

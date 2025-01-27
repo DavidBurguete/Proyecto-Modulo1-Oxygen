@@ -39,7 +39,7 @@
 @mixin proceed-button($color, $height: 50px){
     position: relative;
     border-radius: 99px;
-    top: $height/2;
+    top: calc($height/2);
     height: $height;
     width: 50%;
     color: white;

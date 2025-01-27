@@ -1,0 +1,60 @@
+$form-components-border-color: #95989A;
+$checkbox-size: 24px;
+$checbox-margin: 10px;
+form{
+    label{
+        display: inline-block;
+        width: 100%;
+        color: $main_blue;
+    }
+
+    input:not([type*=checkbox]), input:not([type*=checkbox]):focus-visible{
+        width: 100%;
+        height: 40px;
+        border: 0;
+        border-bottom: 1px solid $form-components-border-color;
+        margin-bottom: $m-b;
+        outline: none;
+    }
+
+    input[type*=checkbox]{
+        position: absolute;
+        height: 24px;
+        width: 24px;
+        margin: 10px;
+        z-index: 5;
+        display: none;
+    }
+    
+    span.checkmark{
+        position: absolute;
+        display: inline-block;
+        border: 1px solid $form-components-border-color;
+        height: $checkbox-size;
+        width: $checkbox-size;
+        border-radius: 4px;
+        margin: $checbox-margin;
+    }
+
+    //background-image: url("../img/Checkmark.png"); This part will be included with javascript
+
+    .label--policy{
+        position: relative;
+        color: #707070;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16.34px;
+        display: inline-block;
+        width: calc(100% - ($checkbox-size + $checbox-margin*2 + 10px));
+        left: calc($checkbox-size + $checbox-margin*2 + 10px);
+    }
+
+    input[type*=submit]{
+        @include mixins.proceed-button($main_blue);
+        top: 0;
+        width: 70%;
+        margin: 20px;
+        left: 20%;
+        box-shadow: 5px 10px 14px 0px #07ACE64A;
+    }
+}

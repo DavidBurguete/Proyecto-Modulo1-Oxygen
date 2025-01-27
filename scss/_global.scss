@@ -1,0 +1,41 @@
+%m-0-auto{
+    margin: 0 auto;
+}
+
+%img_positioning{
+    position: absolute;
+    display: inline-block;
+    left: calc(50% - ($circle/2) + 12px);
+}
+
+$img-w: 193px;
+%benefits-img{
+    position: absolute;
+    width: $img-w;
+    left: calc(50% - $img-w/2 - 20px);
+}
+
+* {
+    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   min-width: 320px;
+   font-family: Open Sans;
+   text-align: center;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Raleway;
+}
+
+button{
+    cursor: pointer;
+}
+
+main{
+    margin-top: 100px;
+    position: relative;
+}

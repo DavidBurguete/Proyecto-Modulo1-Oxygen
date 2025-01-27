@@ -42,4 +42,21 @@
     }
 }
 
+@media screen and (min-width: 1000px) {
+    #contact{
+        display: flex;
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    .contact__message, form{
+        width: 50%;
+    }
+
+    .contact__contactInfo{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 @import 'form';

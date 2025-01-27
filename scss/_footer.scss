@@ -39,3 +39,16 @@ footer{
         }
     }
 }
+
+@media screen and (min-width: 1000px) {
+    footer{
+        .copyright{
+            left: 30px;
+            width: calc(100% - 60px);
+        }
+
+        .social_media{
+            right: 47px;
+        }
+    }
+}

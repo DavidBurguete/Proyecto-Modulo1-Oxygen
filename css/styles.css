@@ -175,6 +175,18 @@ nav {
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 1000px) {
+  #whyus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  #whyus h3 {
+    font-weight: 400;
+    font-size: 36px;
+    width: 100%;
+  }
+}
 .div--items {
   width: 200px;
   margin-bottom: 20px;
@@ -187,6 +199,7 @@ nav {
   font-weight: 800;
   font-size: 20px;
   letter-spacing: 6px;
+  margin-bottom: 20px;
 }
 .div--items h5 {
   font-weight: 400;
@@ -237,6 +250,30 @@ nav {
   left: calc(50% - 31.375px - 15px);
 }
 
+@media screen and (min-width: 1000px) {
+  .div--items {
+    padding: 50px 0;
+  }
+  .div--items > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .img--person-size, .img--catalog-size, .img--eye-size, .div--person-background_color, .div--catalog-background_color, .div--eye-background_color {
+    position: relative;
+    left: 0;
+    margin: 0;
+  }
+  .div--person-background_color, .div--catalog-background_color, .div--eye-background_color {
+    left: 28%;
+  }
+  .img--person-size {
+    left: -35%;
+  }
+  .img--catalog-size, .img--eye-size {
+    left: -28%;
+  }
+}
 #benefits {
   background-color: #F7F7F7;
   padding: 18.31px;
@@ -318,6 +355,87 @@ nav {
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 1000px) {
+  .div--content-display {
+    height: 370px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+  }
+  .div--content-display > div {
+    display: block;
+    width: 50%;
+    height: 100%;
+    align-content: center;
+  }
+  .order-1 {
+    order: 1;
+  }
+  .order-2 {
+    order: 2;
+  }
+  .div--display-height {
+    display: flex !important;
+    position: relative;
+    flex-wrap: nowrap;
+  }
+  .div--background-rotate {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 41px;
+    background-color: #FB3B64;
+    top: 100px;
+    align-self: center;
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 1200px) {
+  .div--background-rotate {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 41px;
+    background-color: #FB3B64;
+    top: 70px;
+    align-self: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .div--background-center_blue {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 999px;
+    background-color: #08A6E4;
+    top: 50%;
+    left: 45%;
+    transform: translate(-55%, -50%);
+  }
+  .div--background-green_rectangle {
+    width: calc(100% + 30px);
+    height: 100%;
+    left: 0;
+  }
+  .macBook, .iphone, .cornet {
+    align-self: center;
+    position: relative;
+    width: 386.44px;
+    max-width: 100%;
+    left: 0;
+  }
+  .benefits__card__border {
+    border-bottom: 4px solid;
+  }
+  .benefits__card__border--red {
+    border-color: #FB3B64;
+  }
+  .benefits__card__border--blue {
+    border-color: #08A6E4;
+  }
+  .benefits__card__border--turquoise {
+    border-color: #55DFB4;
+  }
+}
 #prices {
   position: relative;
 }

@@ -78,3 +78,84 @@ $iphone-bg-size: 140px;
     font-size: 36px;
     margin-bottom: $m-b;
 }
+
+@media screen and (min-width: 1000px) {
+    .div--content-display{
+        height: 370px;
+        width: 70%;
+        display: flex;
+        align-items: center;
+    }
+
+    .div--content-display>div{
+        display: block;
+        width: 50%;
+        height: 100%;
+        align-content: center;
+    }
+
+    .order-1{
+        order: 1;
+    }
+
+    .order-2{
+        order: 2;
+    }
+
+    .div--display-height{
+        display: flex !important;
+        position: relative;
+        flex-wrap: nowrap;
+    }
+
+    .div--background-rotate{
+        @include mixins.circle(130px, $main_red, 41px);
+        top: 100px;
+        align-self: center;
+    }
+
+    @media screen and (min-width: 1200px) {
+        .div--background-rotate{
+            @include mixins.circle(180px, $main_red, 41px);
+            top: 70px;
+            align-self: center;
+        }
+    }
+
+    .div--background-center_blue{
+        @include mixins.circle(250px, $main_blue, 999px);
+        top: 50%;
+        left: 45%;
+        transform: translate(-55%, -50%);
+    }
+
+    .div--background-green_rectangle{
+        width: calc(100% + 30px);
+        height: 100%;
+        left: 0;
+    }
+
+    .macBook, .iphone, .cornet{
+        align-self: center;
+        position: relative;
+        width: 386.44px;
+        max-width: 100%;
+        left: 0;
+    }
+
+    .benefits__card__border{
+        border-bottom: 4px solid;
+    }
+
+    .benefits__card__border--red{
+        border-color: $main_red;
+    }
+
+    .benefits__card__border--blue{
+        border-color: $main_blue;
+    }
+
+    .benefits__card__border--turquoise{
+        border-color: $main_turquoise;
+    }
+}

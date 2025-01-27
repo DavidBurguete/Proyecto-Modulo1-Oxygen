@@ -9,6 +9,21 @@
     }
 }
 
+@media screen and (min-width: 1000px) {
+
+    #whyus{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        h3{
+            font-weight: 400;
+            font-size: 36px;
+            width: 100%;
+        }
+    }
+}
+
 .div--items{
     width: 200px;
     @extend %m-0-auto;
@@ -23,6 +38,7 @@
         font-weight: 800;
         font-size: 20px;
         letter-spacing: 6px;
+        margin-bottom: $m-b;
     }
 
     h5{
@@ -64,4 +80,34 @@
     @include mixins.circle($circle, $main_turquoise);
     display: inline-block;
     left: calc(50% - ($circle/2) - 15px);
+}
+
+@media screen and (min-width: 1000px) {
+    .div--items{
+        padding: 50px 0;
+
+        &>div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .img--person-size, .img--catalog-size, .img--eye-size, .div--person-background_color, .div--catalog-background_color, .div--eye-background_color{
+        position: relative;
+        left: 0;
+        margin: 0;
+    }
+
+    .div--person-background_color, .div--catalog-background_color, .div--eye-background_color{
+        left: 28%;
+    }
+
+    .img--person-size{
+        left: -35%;
+    }
+
+    .img--catalog-size, .img--eye-size{
+        left: -28%;
+    }
 }

@@ -6,6 +6,7 @@ $main_turquoise: #55DFB4;
 $blue: #07ACE6;
 $white: #FFFFFF;
 $black: #000000;
+$gray: #A5A5A5;
 $m-b: 20px;
 $w-70: 70%;
 $circle: 62.75px;
@@ -45,6 +46,10 @@ h1, h2, h3, h4, h5 {
     font-family: Raleway;
 }
 
+button{
+    cursor: pointer;
+}
+
 //Header css
 
 header{
@@ -61,6 +66,8 @@ h1{
     margin: 17px 25px;
     position: relative;
     display: inline-block;
+    font-weight: 300;
+    font-size: 32px;
 }
 
 nav{
@@ -93,6 +100,42 @@ nav{
     }
 }
 
+@media screen and (min-width: 1000px) {
+    header{
+        display: flex;
+    }
+
+    h1{
+        left: 136px;
+    }
+
+    nav{
+        display: flex;
+        position: absolute;
+        right: 20px;
+        font-weight: 700;
+        font-size: 11px;
+        text-align: center;
+
+        a{
+            padding: 26px 0;
+            text-decoration: none;
+            color: $gray;
+            width: 100px;
+            transition: 100ms;
+        }
+
+        a:hover{
+            color: $black;
+            border-bottom: 4px solid $main_blue;
+        }
+    }
+
+    #burger_menu{
+        display: none;
+    }
+}
+
 //Main css
 
 main{
@@ -122,6 +165,7 @@ main{
     }
 
     button{
+        max-width: 440px;
         width: 100%;
         padding: 20px;
         background-color: $blue;
@@ -140,6 +184,25 @@ main{
     height: 267px;
     background: center no-repeat url(https://s3-alpha-sig.figma.com/img/c3f9/6a42/6648411f57f04aff84de5d247f55d2a8?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JjMcR0dAcKxv9cxAUdNtoLsalHY4RELkBrC4HXweblehMyePAiFeoRz4ZbFG5IbAG3vnLsDQHIHJV~I9BYFOFcnVLSoipz-fL32tZ4N9jkoLKA5CjId-7iOgDXWofz44mjiLTjRhmUCmemy86mlqwZ4aT~73Hzw1Rdn6BnJdPM8O7mE8-NyxjaAIcLkls6Npm4g5f8TNN2BNC7tEmxnTXrXeXPLakG9grgv4~LNW~Vk3slZcNjLfgn~blh7kPZAQQOwqnTniDSfSHurNmDtaktycK7OJGv0H0iuc041OsGaKTM0oSJ9jrJCnoIB7VUzG64xgqxRmOktuog0y-hCcSw__);
     margin-bottom: $m-b;
+
+    img{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #laptop{
+        display: flex;
+        justify-content: center;
+        height: 600px;
+        width: 100%;
+        background: none;
+        overflow: hidden;
+
+        img{
+            display: flex;
+        }
+    }
 }
 
 #whyus{
@@ -172,7 +235,7 @@ main{
     h5{
         font-weight: 400;
         font-size: 17px;
-        color: #A5A5A5;
+        color: $gray;
         margin-bottom: $m-b;
     }
 }
@@ -393,7 +456,7 @@ $iphone-bg-size: 140px;
         position: relative;
         font-weight: 600;
         font-size: 16px;
-        color: #A5A5A5;
+        color: $gray;
         padding: 5px;
         bottom: 8px;
     }
@@ -491,7 +554,7 @@ footer{
             font-weight: 400;
             font-size: 11px;
             line-height: 14.98px;
-            color: #A5A5A5;
+            color: $gray;
         }
     }
 

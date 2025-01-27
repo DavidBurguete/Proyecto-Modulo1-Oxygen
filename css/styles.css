@@ -444,6 +444,7 @@ nav {
   border: 1px solid #FB3B64;
   border-radius: 18px;
   width: 80%;
+  background-color: #FFFFFF;
   margin: 0 auto 40px auto;
   position: relative;
 }
@@ -452,6 +453,7 @@ nav {
   border: 1px solid #08A6E4;
   border-radius: 18px;
   width: 80%;
+  background-color: #FFFFFF;
   margin: 0 auto 40px auto;
   position: relative;
 }
@@ -460,6 +462,7 @@ nav {
   border: 1px solid #55DFB4;
   border-radius: 18px;
   width: 80%;
+  background-color: #FFFFFF;
   margin: 0 auto 40px auto;
   position: relative;
 }
@@ -588,6 +591,51 @@ nav {
   border: 0;
 }
 
+@media screen and (min-width: 1000px) {
+  #prices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  #prices h2 {
+    flex: 1 1 100%;
+  }
+  .div--basic-border, .div--professional-border, .div--premium-border {
+    margin: 30px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 372px;
+    width: auto;
+    transition: 200ms;
+  }
+  .div--basic-border:hover, .div--professional-border:hover, .div--premium-border:hover {
+    transform: scale(1.05);
+  }
+  .div--basic-border:hover {
+    box-shadow: 5px 10px 27px 0px rgba(235, 71, 110, 0.2901960784);
+  }
+  .div--professional-border:hover {
+    box-shadow: 5px 10px 27px 0px rgba(7, 172, 230, 0.2901960784);
+  }
+  .div--premium-border:hover {
+    box-shadow: 5px 10px 27px 0px rgba(85, 223, 180, 0.2901960784);
+  }
+  .div--plan {
+    width: auto;
+    text-align: center;
+    top: 0;
+  }
+  .div--plan h3 {
+    padding-bottom: 10px;
+  }
+  .div--plan-specifications p {
+    padding: 5px;
+    width: auto;
+  }
+}
 #contact {
   text-align: left;
   margin: 0 30px;

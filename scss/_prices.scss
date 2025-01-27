@@ -1,18 +1,17 @@
 #prices{
     position: relative;
-    
 }
 
 .div--basic-border{
-    @include mixins.card($main_red);
+    @include card($main_red);
 }
 
 .div--professional-border{
-    @include mixins.card($main_blue);
+    @include card($main_blue);
 }
 
 .div--premium-border{
-    @include mixins.card($main_turquoise);
+    @include card($main_turquoise);
 }
 
 .div--plan{
@@ -21,17 +20,17 @@
 }
 
 .div--basic_plan-type{
-    @include mixins.plan-type($main_red);
+    @include plan-type($main_red);
     bottom: 27px;
 }
 
 .div--professional_plan-type{
-    @include mixins.plan-type($main_blue);
+    @include plan-type($main_blue);
     bottom: 20px;
 }
 
 .div--premium_plan-type{
-    @include mixins.plan-type($main_turquoise);
+    @include plan-type($main_turquoise);
     bottom: 20px;
 }
 
@@ -55,13 +54,68 @@
 }
 
 .div--basic-begin{
-    @include mixins.proceed-button($main_red);
+    @include proceed-button($main_red);
 }
 
 .div--professional-begin{
-    @include mixins.proceed-button($main_blue);
+    @include proceed-button($main_blue);
 }
 
 .div--premium-begin{
-    @include mixins.proceed-button($main_turquoise);
+    @include proceed-button($main_turquoise);
+}
+
+@media screen and (min-width: 1000px) {
+    #prices{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 40px;
+
+        h2{
+            flex: 1 1 100%;
+        }
+    }
+
+    .div--basic-border, .div--professional-border, .div--premium-border{
+        margin: 30px;
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        min-width: 372px;
+        width: auto;
+        transition: 200ms;
+    }
+
+    .div--basic-border:hover, .div--professional-border:hover, .div--premium-border:hover{
+        transform: scale(1.05);
+    }
+
+    .div--basic-border:hover{
+        box-shadow: 5px 10px 27px 0px #EB476E4A;
+    }
+
+    .div--professional-border:hover{
+        box-shadow: 5px 10px 27px 0px #07ACE64A;
+    }
+
+    .div--premium-border:hover{
+        box-shadow: 5px 10px 27px 0px #55DFB44A;
+    }
+
+    .div--plan{
+        width: auto;
+        text-align: center;
+        top: 0;
+
+        h3{
+            padding-bottom: 10px;
+        }
+    }
+
+    .div--plan-specifications p{
+        padding: 5px;
+        width: auto;
+    }
 }

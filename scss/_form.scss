@@ -17,23 +17,20 @@ form{
         outline: none;
     }
 
-    input[type*=checkbox]{
-        position: absolute;
-        height: 24px;
-        width: 24px;
-        margin: 10px;
-        z-index: 5;
-        display: none;
+    input[type=checkbox] {
+        display:none;
     }
     
-    span.checkmark{
+    input[type=checkbox] + label {
+        margin: 10px;
         position: absolute;
-        display: inline-block;
-        border: 1px solid $form-components-border-color;
-        height: $checkbox-size;
-        width: $checkbox-size;
-        border-radius: 4px;
-        margin: $checbox-margin;
+        background:url("../img/Checkbox_unChecked.png") no-repeat;
+        height: 24px;
+        width: 24px;
+    }
+    
+    input[type=checkbox]:checked + label {
+        background:url("../img/Checkbox_Checked.png") no-repeat;
     }
 
     //background-image: url("../img/Checkmark.png"); This part will be included with javascript

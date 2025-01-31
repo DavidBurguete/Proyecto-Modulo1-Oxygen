@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5 {
   font-family: Raleway;
 }
 
-button {
+button, input[type*=submit] {
   cursor: pointer;
 }
 
@@ -168,6 +168,7 @@ nav {
 }
 #whyus {
   width: 70%;
+  margin-bottom: 50px;
 }
 #whyus h3 {
   font-weight: 300;
@@ -251,6 +252,9 @@ nav {
 }
 
 @media screen and (min-width: 1000px) {
+  #whyus {
+    margin-bottom: 100px;
+  }
   .div--items {
     padding: 50px 0;
   }
@@ -276,7 +280,7 @@ nav {
 }
 #benefits {
   background-color: #F7F7F7;
-  padding: 18.31px;
+  padding: 30px;
   margin-bottom: 50px;
 }
 
@@ -289,6 +293,12 @@ nav {
 }
 .div--content-display > :nth-child(n) {
   margin: 30px;
+}
+.div--content-display > div > h3, .div--content-display > div > .benefits__card__border {
+  width: 60%;
+}
+.div--content-display > div > p {
+  width: 70%;
 }
 .div--content-display h3 {
   font-weight: 400;
@@ -345,8 +355,8 @@ nav {
   height: 140px;
   border-radius: 5px;
   background-color: #55DFB4;
-  width: calc(100% - 36.62px);
-  left: 18.31px;
+  width: calc(100% - 60px);
+  left: 30px;
 }
 
 .h2--text-style {
@@ -356,9 +366,13 @@ nav {
 }
 
 @media screen and (min-width: 1000px) {
+  #benefits {
+    padding: 100px;
+    margin-bottom: 100px;
+  }
   .div--content-display {
     height: 370px;
-    width: 70%;
+    width: 90%;
     display: flex;
     align-items: center;
   }
@@ -367,6 +381,19 @@ nav {
     width: 50%;
     height: 100%;
     align-content: center;
+  }
+  .div--content-display-spacing {
+    background-color: transparent;
+    border: none;
+  }
+  .div--content-display-spacing > div:first-child {
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    border: 1px solid #E8E9ED;
+    border-radius: 5px;
+    margin: 30px 0;
+    padding: 0 30px;
+    width: 60%;
   }
   .order-1 {
     order: 1;
@@ -438,6 +465,7 @@ nav {
 }
 #prices {
   position: relative;
+  margin-bottom: 70px;
 }
 
 .div--basic-border {
@@ -597,6 +625,7 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 40px;
+    margin-bottom: 100px;
   }
   #prices h2 {
     flex: 1 1 100%;
@@ -701,22 +730,18 @@ form input:not([type*=checkbox]), form input:not([type*=checkbox]):focus-visible
   margin-bottom: 20px;
   outline: none;
 }
-form input[type*=checkbox] {
-  position: absolute;
-  height: 24px;
-  width: 24px;
-  margin: 10px;
-  z-index: 5;
+form input[type=checkbox] {
   display: none;
 }
-form span.checkmark {
+form input[type=checkbox] + label {
+  margin: 10px;
   position: absolute;
-  display: inline-block;
-  border: 1px solid #95989A;
+  background: url("../img/Checkbox_unChecked.png") no-repeat;
   height: 24px;
   width: 24px;
-  border-radius: 4px;
-  margin: 10px;
+}
+form input[type=checkbox]:checked + label {
+  background: url("../img/Checkbox_Checked.png") no-repeat;
 }
 form .label--policy {
   position: relative;

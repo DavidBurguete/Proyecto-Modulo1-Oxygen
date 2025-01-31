@@ -1,6 +1,7 @@
 #whyus{
     width: $w-70;
     @extend %m-0-auto;
+    margin-bottom: 50px;
 
     h3{
         font-weight: 300;
@@ -83,6 +84,11 @@
 }
 
 @media screen and (min-width: 1000px) {
+
+    #whyus{
+        @include spacing-between-elements;
+    }
+
     .div--items{
         padding: 50px 0;
 

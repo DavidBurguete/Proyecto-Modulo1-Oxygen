@@ -1,4 +1,4 @@
-$benefits-left-size: 18.31px;
+$benefits-left-size: 30px;
 #benefits{
     background-color: #F7F7F7;
     padding: $benefits-left-size;
@@ -14,6 +14,16 @@ $benefits-left-size: 18.31px;
 
     &>:nth-child(n){
         margin: 30px;
+    }
+
+    >div{
+        >h3, >.benefits__card__border{
+            width: 60%;
+        }
+
+        >p{
+            width: 70%;
+        }
     }
 
     img{
@@ -80,9 +90,14 @@ $iphone-bg-size: 140px;
 }
 
 @media screen and (min-width: 1000px) {
+    #benefits{
+        padding: 100px;
+        @include spacing-between-elements;
+    }
+
     .div--content-display{
         height: 370px;
-        width: 70%;
+        width: 90%;
         display: flex;
         align-items: center;
     }
@@ -92,6 +107,21 @@ $iphone-bg-size: 140px;
         width: 50%;
         height: 100%;
         align-content: center;
+    }
+
+    .div--content-display-spacing{
+        background-color: transparent;
+        border: none;
+
+        &>div:first-child{
+            background-color: $white;
+            box-sizing: border-box;
+            border: 1px solid #E8E9ED;
+            border-radius: 5px;
+            margin: 30px 0;
+            padding: 0 30px;
+            width: 60%;
+        }
     }
 
     .order-1{

@@ -1,5 +1,6 @@
 #prices{
     position: relative;
+    margin-bottom: 70px;
 }
 
 .div--basic-border{
@@ -71,6 +72,7 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-bottom: 40px;
+        @include spacing-between-elements;
 
         h2{
             flex: 1 1 100%;

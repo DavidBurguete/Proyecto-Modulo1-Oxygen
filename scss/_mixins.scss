@@ -50,3 +50,7 @@
     margin: 0 auto;
     border: 0;
 }
+
+@mixin spacing-between-elements{
+    margin-bottom: 100px;
+}

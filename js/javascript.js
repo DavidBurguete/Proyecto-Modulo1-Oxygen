@@ -19,4 +19,19 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         collapsed = !collapsed;
     });
+
+    document.addEventListener("scroll", function(){
+        let percentajeScroller = document.getElementById("percentajeScroller");
+        let totalHeight = document.documentElement.scrollHeight;
+        let windowSize = window.innerHeight;
+        let heightPosition = window.scrollY;
+        let percentage = heightPosition/(totalHeight-windowSize)*100;
+        if(!percentage == 0){
+            percentajeScroller.style.width = percentage + "%";
+            percentajeScroller.style.display = "block";
+        }
+        else{
+            percentajeScroller.style.display = "none";
+        }
+    });
 });

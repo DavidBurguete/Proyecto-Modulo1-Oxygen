@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function(){
     let menu = document.getElementById("burger_menu");
     let nav = document.getElementsByTagName("nav")[0];
     let collapsed = true;
+    let returnTop = document.getElementById("returnTop");
+    returnTop.disabled = true;
     menu.addEventListener("click", function(){
         if(collapsed){
             nav.classList.add("nav__expanded");
@@ -33,5 +35,18 @@ document.addEventListener("DOMContentLoaded", function(){
         else{
             percentajeScroller.style.display = "none";
         }
+
+        if(percentage >= 15){
+            returnTop.disabled = false;
+        }
+        else{
+            returnTop.disabled = true;
+        }
+    });
+
+    returnTop.addEventListener("click", function(){
+        setTimeout(() => {
+            document.documentElement.scrollTop = 0;
+        }, 200);
     });
 });

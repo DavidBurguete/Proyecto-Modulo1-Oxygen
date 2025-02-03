@@ -20,6 +20,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-width: 320px;
   font-family: Open Sans;
@@ -37,6 +41,28 @@ button, input[type*=submit] {
 main {
   margin-top: 100px;
   position: relative;
+}
+
+#returnTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  box-sizing: border-box;
+  background-color: #08A6E4;
+  border: none;
+  border-radius: 99px;
+  z-index: 3;
+  transition: 200ms;
+}
+#returnTop img {
+  height: 35px;
+  width: 35px;
+  margin: 15px;
+}
+
+#returnTop:disabled {
+  cursor: default;
+  opacity: 0;
 }
 
 .div--elements-centered {

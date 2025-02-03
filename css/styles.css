@@ -71,7 +71,8 @@ main {
 #laptop {
   position: relative;
   height: 267px;
-  background: center no-repeat url(https://s3-alpha-sig.figma.com/img/c3f9/6a42/6648411f57f04aff84de5d247f55d2a8?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JjMcR0dAcKxv9cxAUdNtoLsalHY4RELkBrC4HXweblehMyePAiFeoRz4ZbFG5IbAG3vnLsDQHIHJV~I9BYFOFcnVLSoipz-fL32tZ4N9jkoLKA5CjId-7iOgDXWofz44mjiLTjRhmUCmemy86mlqwZ4aT~73Hzw1Rdn6BnJdPM8O7mE8-NyxjaAIcLkls6Npm4g5f8TNN2BNC7tEmxnTXrXeXPLakG9grgv4~LNW~Vk3slZcNjLfgn~blh7kPZAQQOwqnTniDSfSHurNmDtaktycK7OJGv0H0iuc041OsGaKTM0oSJ9jrJCnoIB7VUzG64xgqxRmOktuog0y-hCcSw__);
+  background: center no-repeat url("../img/Desktop.png");
+  background-size: cover;
   margin-bottom: 20px;
 }
 #laptop img {
@@ -100,6 +101,12 @@ header {
   z-index: 5;
 }
 
+.header__display {
+  position: relative;
+  background-color: #FFFFFF;
+  z-index: 5;
+}
+
 h1 {
   color: #08A6E4;
   margin: 17px 25px;
@@ -111,7 +118,32 @@ h1 {
 
 nav {
   text-transform: uppercase;
-  display: none;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 11px;
+  text-align: left;
+  padding: 20px 0;
+  background-color: #FFFFFF;
+  width: 100%;
+  bottom: 0;
+  z-index: 4;
+}
+nav a {
+  padding: 10px 30px;
+  letter-spacing: 3.28px;
+  text-decoration: none;
+  color: #A5A5A5;
+  width: 100%;
+}
+nav a:hover {
+  color: #000000;
+}
+
+.nav__expanded {
+  bottom: auto;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2901960784);
 }
 
 #burger_menu {
@@ -129,11 +161,27 @@ nav {
   background-color: #07ACE6;
   top: 5px;
 }
-#burger_menu :first-child {
+#burger_menu .burger_menu--first {
+  transition: 150ms;
   top: 0;
 }
-#burger_menu :last-child {
+#burger_menu .burger_menu--first--crossed {
+  top: auto;
+  rotate: 45deg;
+}
+#burger_menu .burger_menu--middle {
+  transition: 150ms;
+}
+#burger_menu .burger_menu--middle--crossed {
+  display: none;
+}
+#burger_menu .burger_menu--last {
+  transition: 150ms;
   top: 10px;
+}
+#burger_menu .burger_menu--last--crossed {
+  top: auto;
+  rotate: -45deg;
 }
 
 @media screen and (min-width: 1000px) {
@@ -145,11 +193,15 @@ nav {
   }
   nav {
     display: flex;
+    flex-direction: row;
     position: absolute;
+    box-shadow: none;
     right: 20px;
+    padding: 0;
     font-weight: 700;
     font-size: 11px;
     text-align: center;
+    width: auto;
   }
   nav a {
     padding: 26px 0;

@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function(){
         let windowSize = window.innerHeight;
         let heightPosition = window.scrollY;
         let percentage = heightPosition/(totalHeight-windowSize)*100;
+        const footerHeight = document.querySelector('footer').getBoundingClientRect().height; //Get the size of the footer tag
         if(!percentage == 0){
             percentajeScroller.style.width = percentage + "%";
             percentajeScroller.style.display = "block";
@@ -41,6 +42,19 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         else{
             returnTop.disabled = true;
+        }
+
+        //Get the percentage position of footer away from the top of the document
+        let footerPercentage = (totalHeight-windowSize-footerHeight-20)/(totalHeight-windowSize)*100; //The extra 20 are the bottom: 20px; property
+        console.log(footerPercentage);
+        console.log("----------------");
+        // Evitar que el botón se superponga al footer
+        if (footerPercentage <= percentage) {
+            returnTop.style.position = 'absolute';
+            returnTop.style.bottom = '20px'; // Ajustar al final del main
+        } else {
+            returnTop.style.position = 'fixed';
+            returnTop.style.bottom = '20px'; // En la parte inferior de la pantalla
         }
     });
 

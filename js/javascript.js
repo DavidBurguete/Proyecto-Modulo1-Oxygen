@@ -46,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
         //Get the percentage position of footer away from the top of the document
         let footerPercentage = (totalHeight-windowSize-footerHeight-20)/(totalHeight-windowSize)*100; //The extra 20 are the bottom: 20px; property
-        console.log(footerPercentage);
-        console.log("----------------");
         // Evitar que el botón se superponga al footer
         if (footerPercentage <= percentage) {
             returnTop.style.position = 'absolute';
@@ -62,5 +60,41 @@ document.addEventListener("DOMContentLoaded", function(){
         setTimeout(() => {
             document.documentElement.scrollTop = 0;
         }, 200);
+    });
+
+    document.getElementById("submit").addEventListener("click", function(){
+        let nameField = document.getElementById("name");
+        validName = (nameField.value.length >= 2 && nameField.value.length <= 100);
+
+        let emailField = document.getElementById("email");
+        let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let validEmail = regex.exec(emailField.value);
+
+        let confirmUsageOfData = document.getElementById("confirmUsageOfData");
+        isChecked(validName, nameField, validEmail, confirmUsageOfData);
+
+        function isChecked(validName, nameField, validEmail, confirmUsageOfData){
+            validName ? nameField.classList.remove("submit__error") : nameField.classList.add("submit__error");
+            validEmail === null ? emailField.classList.add("submit__error") : emailField.classList.remove("submit__error");
+            confirmUsageOfData.checked ? confirmUsageOfData.classList.remove("submit__error") : confirmUsageOfData.classList.add("submit__error");
+            if(validName && validEmail !== null && confirmUsageOfData.checked){
+                let sendData = fetch("https://jsonplaceholder.typicode.com/posts", {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        title: nameField.value,
+                        body: emailField.value
+                    }),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    }
+                });
+
+                sendData.then((resolve) => resolve.json()).then((json) => alert(`Thank you, ${json.title}, for contacting with us.`)).catch(() => {alert("An error occurred.\nPlease, try again.")});
+
+                nameField.value = "";
+                emailField.value = "";
+                confirmUsageOfData.checked = false;
+            }
+        }
     });
 });

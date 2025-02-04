@@ -13,8 +13,16 @@ form{
         height: 40px;
         border: 0;
         border-bottom: 1px solid $form-components-border-color;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
         margin-bottom: $m-b;
+        padding: 10px;
         outline: none;
+    }
+
+    input.submit__error{
+        border-bottom: 1px solid red;
+        background-color: rgba(255, 99, 71, 0.5);
     }
 
     input[type=checkbox] {
@@ -27,6 +35,19 @@ form{
         background:url("../img/Checkbox_unChecked.png") no-repeat;
         height: 24px;
         width: 24px;
+        border-radius: 4px;
+    }
+
+    input[type=checkbox].submit__error + label{
+        background: url("../img/Checkbox_unChecked.png"), rgba(255, 99, 71, 0.5);
+    }
+
+    input[type=checkbox]:checked.submit__error + label{
+        background: url("../img/Checkbox_Checked.png"), rgba(255, 99, 71, 0.5);
+    }
+
+    input[type=checkbox].submit__error ~ .label--policy{
+        color: red;
     }
     
     input[type=checkbox]:checked + label {
@@ -46,7 +67,7 @@ form{
         left: calc($checkbox-size + $checbox-margin*2 + 10px);
     }
 
-    input[type*=submit]{
+    input[type*=submit], input#submit{
         @include proceed-button($main_blue);
         top: 0;
         width: 70%;

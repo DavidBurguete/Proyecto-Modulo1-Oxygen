@@ -49,10 +49,10 @@ document.addEventListener("DOMContentLoaded", function(){
         // Evitar que el botón se superponga al footer
         if (footerPercentage <= percentage) {
             returnTop.style.position = 'absolute';
-            returnTop.style.bottom = '20px'; // Ajustar al final del main
+            returnTop.style.bottom = '20px';
         } else {
             returnTop.style.position = 'fixed';
-            returnTop.style.bottom = '20px'; // En la parte inferior de la pantalla
+            returnTop.style.bottom = '20px';
         }
     });
 
@@ -97,4 +97,61 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
     });
+
+    $('#currency').select2();
+
+    $('#currency').on('change', function(){
+        let choosedCurrency = document.getElementById("currency").value;
+        let plans = Array.from(document.getElementById("prices").children).splice(3);
+        let prices = [];
+        let previousCurrency = null;
+        for(let i = 0; i < plans.length; i++){
+            prices.push(parseFloat(plans[i].children[0].children[1].innerHTML.substring(1)));
+            previousCurrency = plans[i].children[0].children[1].innerHTML.substring(0,1);
+        }
+        getCurrencies(previousCurrency,choosedCurrency).then(response => {
+            let previous = response[0];
+            let chosen = response[1];
+            let chosenCurrency = null;
+            switch (choosedCurrency) {
+                case "usd":
+                    chosenCurrency = "$";
+                    break;
+                case "eur":
+                    chosenCurrency = "€";
+                    break;
+                case "gbp":
+                    chosenCurrency = "£";
+                    break;
+                default:
+                    chosenCurrency = "€";
+                    break;
+            }
+            for(let i = 0; i < prices.length; i++){
+                prices[i] = chosenCurrency + Math.round(prices[i]/previous*chosen);
+                plans[i].children[0].children[1].innerHTML = prices[i];
+            }
+        }).catch(() => {
+            alert("There was a problem with the conversion.\nPlease, try again.");
+        });
+    });
+
+    async function getCurrencies(previous, chosen){
+        let conversions = await $.getJSON("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json", data => {return data;});
+        switch (previous) {
+            case "$":
+                previous = "usd";
+                break;
+            case "€":
+                previous = "eur";
+                break;
+            case "£":
+                previous = "gbp";
+                break;
+            default:
+                previous = "eur";
+                break;
+        }
+        return [conversions["eur"][previous], conversions["eur"][chosen]];
+    }
 });

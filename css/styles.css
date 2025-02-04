@@ -555,6 +555,21 @@ nav a:hover {
   margin-bottom: 70px;
 }
 
+#currency + span {
+  max-width: 300px;
+  width: 30% !important;
+  margin: 20px;
+}
+
+@media screen and (min-width: 1000px) {
+  #prices h2 {
+    margin-bottom: 50px;
+  }
+  #currency + span {
+    position: absolute;
+    top: 35px;
+  }
+}
 .div--basic-border {
   border: 1px solid #FB3B64;
   border-radius: 18px;

@@ -1,14 +1,15 @@
 import {modalOnLoad, fadeIn} from "./modal.js";
 import {menu} from "./nav.js";
 import {scrolled} from "./retunToTop.js";
-import {isChecked, getCurrencies} from "./currencies.js";
+import {isChecked} from "./form.js";
+import {getCurrencies} from "./currencies.js";
 
 document.addEventListener("DOMContentLoaded", function(){
     let returnTop = document.getElementById("returnTop");
     returnTop.disabled = true;
 
     document.addEventListener("scroll", function(){
-        scrolled(returnTop);
+        let percentage = scrolled(returnTop);
 
         //Show subscribe to newsletter when scrolled >=25%
         if(percentage >= 25){
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     $('#currency').select2();
 
-    $('#currency').on('change', function(){
+    $('#currency').on('change', async function(){
         let choosedCurrency = document.getElementById("currency").value;
         let plans = Array.from(document.getElementById("prices").children).splice(3);
         let prices = [];
@@ -45,7 +46,8 @@ document.addEventListener("DOMContentLoaded", function(){
             prices.push(parseFloat(plans[i].children[0].children[1].innerHTML.substring(1)));
             previousCurrency = plans[i].children[0].children[1].innerHTML.substring(0,1);
         }
-        getCurrencies(previousCurrency,choosedCurrency).then(response => {
+        let response = await getCurrencies(previousCurrency,choosedCurrency);
+        if(response !== null){
             let previous = response[0];
             let chosen = response[1];
             let chosenCurrency = null;
@@ -67,9 +69,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 prices[i] = chosenCurrency + Math.round(prices[i]/previous*chosen);
                 plans[i].children[0].children[1].innerHTML = prices[i];
             }
-        }).catch(() => {
-            alert("There was a problem with the conversion.\nPlease, try again.");
-        });
+        }
     });
 
     modalOnLoad(regex);

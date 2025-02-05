@@ -1,29 +1,14 @@
-function isChecked(validName, nameField, validEmail, confirmUsageOfData){
-    validName ? nameField.classList.remove("submit__error") : nameField.classList.add("submit__error");
-    validEmail === null ? emailField.classList.add("submit__error") : emailField.classList.remove("submit__error");
-    confirmUsageOfData.checked ? confirmUsageOfData.classList.remove("submit__error") : confirmUsageOfData.classList.add("submit__error");
-    if(validName && validEmail !== null && confirmUsageOfData.checked){
-        let sendData = fetch("https://jsonplaceholder.typicode.com/posts", {
-            method: 'POST',
-            body: JSON.stringify({
-                title: nameField.value,
-                body: emailField.value
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            }
-        });
-
-        sendData.then((resolve) => resolve.json()).then((json) => alert(`Thank you, ${json.title}, for contacting with us.`)).catch(() => {alert("An error occurred.\nPlease, try again.")});
-
-        nameField.value = "";
-        emailField.value = "";
-        confirmUsageOfData.checked = false;
-    }
-}
-
 async function getCurrencies(previous, chosen){
-    let conversions = await $.getJSON("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json", data => {return data;});
+    let conversions = await fetch("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json")
+        .then(response => response.json())
+        .catch(() => {
+            alert("An error ocurred.\nPlease, try again");
+            return null;
+        });
+    if(conversions === null){
+        return conversions;
+    }
+    conversions = conversions["eur"];
     switch (previous) {
         case "$":
             previous = "usd";
@@ -38,7 +23,7 @@ async function getCurrencies(previous, chosen){
             previous = "eur";
             break;
     }
-    return [conversions["eur"][previous], conversions["eur"][chosen]];
+    return [conversions[previous], conversions[chosen]];
 }
 
-export {isChecked, getCurrencies};
+export {getCurrencies};

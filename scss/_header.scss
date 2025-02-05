@@ -1,5 +1,6 @@
 header{
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     background-color: $white;
     box-shadow: 0px 3px 6px 0px #0000004A;
@@ -129,6 +130,7 @@ nav{
         font-size: 11px;
         text-align: center;
         width: auto;
+        z-index: 5;
 
         a{
             padding: 26px 0;

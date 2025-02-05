@@ -9,7 +9,7 @@
     <link href="css/select2.min.css" rel="stylesheet">
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/select2.min.js"></script>
-    <script src="js/javascript.js"></script>
+    <script type="module" src="js/javascript.js"></script>
     <title>Oxygen Shop</title>
 </head>
 <body>
@@ -37,7 +37,7 @@
         <div class="div--elements-centered">
             <h2>Sell More!</h2>
             <p>Open shop on our platform and increase your sales</p>
-            <button>Open your shop</button>
+            <button type="button" data-toggle="modal" data-target="#newsletter">Open your shop</button>
         </div>
         <div id="laptop">
             <img src="img/Desktop.png" alt="">
@@ -254,5 +254,23 @@
             </a>
         </div>
     </footer>
+    <div class="modal fade" id="newsletter" tabindex="-1" role="dialog" aria-labelledby="newsletter">
+        <div class="modal-dialog" role="document">
+            <div class="modal-header">
+                <h5 class="modal-title">Subscribe to our newsletter!</h5>
+                <button id="close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="email" name="newsletterEmail" id="newsletterEmail">
+            </div>
+            <div class="modal-footer">
+                <form action="" method="post">
+                    <button type="button" class="modal-footer-button" id="subscribe">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

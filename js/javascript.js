@@ -3,7 +3,9 @@ import {menu} from "./nav.js";
 import {scrolled} from "./retunToTop.js";
 import {isChecked} from "./form.js";
 import {getCurrencies} from "./currencies.js";
+import {Slider} from "./slider.js";
 
+let slider = new Slider("slider");
 document.addEventListener("DOMContentLoaded", function(){
     let returnTop = document.getElementById("returnTop");
     returnTop.disabled = true;
@@ -26,13 +28,13 @@ document.addEventListener("DOMContentLoaded", function(){
     let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     document.getElementById("submit").addEventListener("click", function(){
         let nameField = document.getElementById("name");
-        validName = (nameField.value.length >= 2 && nameField.value.length <= 100);
+        let validName = (nameField.value.length >= 2 && nameField.value.length <= 100);
 
         let emailField = document.getElementById("email");
         let validEmail = regex.exec(emailField.value);
 
         let confirmUsageOfData = document.getElementById("confirmUsageOfData");
-        isChecked(validName, nameField, validEmail, confirmUsageOfData);
+        isChecked(validName, nameField, validEmail, emailField, confirmUsageOfData);
     });
 
     $('#currency').select2();
@@ -73,4 +75,34 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     modalOnLoad(regex);
+
+    document.getElementById("prev").addEventListener("click", () => {
+        slider.automaticSlide();
+        slider.previous();
+    });
+    document.getElementById("next").addEventListener("click", () => {
+        slider.automaticSlide();
+        slider.next();
+    });
+    document.getElementById("dot_1").addEventListener("click", (dot) => {
+        slider.automaticSlide();
+        slider.select(dot);
+    });
+    document.getElementById("dot_2").addEventListener("click", (dot) => {
+        slider.automaticSlide();
+        slider.select(dot);
+    });
+    document.getElementById("dot_3").addEventListener("click", (dot) => {
+        slider.automaticSlide();
+        slider.select(dot);
+    });
+    document.getElementById("dot_4").addEventListener("click", (dot) => {
+        slider.automaticSlide();
+        slider.select(dot);
+    });
+    document.getElementById("dot_5").addEventListener("click", (dot) => {
+        slider.automaticSlide();
+        slider.select(dot);
+    });
 });
+slider.automaticSlide();

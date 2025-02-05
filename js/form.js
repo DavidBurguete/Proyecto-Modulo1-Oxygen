@@ -1,4 +1,4 @@
-function isChecked(validName, nameField, validEmail, confirmUsageOfData){
+function isChecked(validName, nameField, validEmail, emailField, confirmUsageOfData){
     validName ? nameField.classList.remove("submit__error") : nameField.classList.add("submit__error");
     validEmail === null ? emailField.classList.add("submit__error") : emailField.classList.remove("submit__error");
     confirmUsageOfData.checked ? confirmUsageOfData.classList.remove("submit__error") : confirmUsageOfData.classList.add("submit__error");

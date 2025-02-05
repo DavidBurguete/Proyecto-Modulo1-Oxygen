@@ -769,6 +769,69 @@ nav a:hover {
     width: auto;
   }
 }
+#slider {
+  position: relative;
+  width: 100%;
+  padding: 50px 0;
+  background-color: black;
+  margin-bottom: 50px;
+}
+#slider button {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 99px;
+  vertical-align: middle;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#slider .previous {
+  left: 10px;
+  background: url("../img/Previous.png"), rgba(0, 0, 0, 0.55);
+  background-size: cover;
+}
+#slider .next {
+  right: 10px;
+  background: url("../img/Next.png"), rgba(0, 0, 0, 0.55);
+  background-size: cover;
+}
+#slider img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: none;
+}
+#slider .shown {
+  display: block;
+}
+#slider .sliderDots {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#slider .slideDot {
+  height: 15px;
+  width: 15px;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.3;
+  border-radius: 99px;
+  margin: 10px;
+}
+#slider .selected {
+  opacity: 1;
+}
+
+@media screen and (min-width: 1000px) {
+  #slider {
+    width: 70%;
+    margin: 50px auto;
+  }
+  #slider img {
+    height: 600px;
+  }
+}
 #contact {
   text-align: left;
   margin: 0 30px;

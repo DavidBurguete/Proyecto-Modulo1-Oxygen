@@ -100,9 +100,11 @@ document.addEventListener("DOMContentLoaded", function(){
         slider.automaticSlide();
         slider.select(dot);
     });
-    document.getElementById("dot_5").addEventListener("click", (dot) => {
+    document.getElementById("dot_5").addEventListener("click", (dot) => {jumpToDot(dot)});
+
+    function jumpToDot(dot){
         slider.automaticSlide();
         slider.select(dot);
-    });
+    }
 });
-slider.automaticSlide();
+slider.automaticSlide("begin");

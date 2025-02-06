@@ -771,7 +771,9 @@ nav a:hover {
 }
 #slider {
   position: relative;
+  box-sizing: unset;
   width: 100%;
+  height: 350px;
   padding: 50px 0;
   background-color: black;
   margin-bottom: 50px;
@@ -785,6 +787,7 @@ nav a:hover {
   vertical-align: middle;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 5;
 }
 #slider .previous {
   left: 10px;
@@ -796,14 +799,20 @@ nav a:hover {
   background: url("../img/Next.png"), rgba(0, 0, 0, 0.55);
   background-size: cover;
 }
-#slider img {
+#slider div {
+  height: inherit;
+}
+#slider div img {
+  position: absolute;
+  left: 0;
   width: 100%;
-  height: 350px;
+  height: inherit;
   object-fit: cover;
-  display: none;
+  opacity: 0;
+  transition: 500ms;
 }
 #slider .shown {
-  display: block;
+  opacity: 1;
 }
 #slider .sliderDots {
   position: absolute;
@@ -818,6 +827,7 @@ nav a:hover {
   opacity: 0.3;
   border-radius: 99px;
   margin: 10px;
+  transition: 500ms;
 }
 #slider .selected {
   opacity: 1;
@@ -826,10 +836,8 @@ nav a:hover {
 @media screen and (min-width: 1000px) {
   #slider {
     width: 70%;
-    margin: 50px auto;
-  }
-  #slider img {
     height: 600px;
+    margin: 50px auto;
   }
 }
 #contact {

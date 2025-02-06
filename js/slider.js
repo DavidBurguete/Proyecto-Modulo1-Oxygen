@@ -45,10 +45,12 @@ class Slider{
         this.selected.classList.add("selected");
     }
 
-    automaticSlide() {
-        this.next();
+    automaticSlide(automate = null) {
+        if(automate != null){
+            this.next();
+        }
         clearTimeout(this.slideTimeout); //This is the part where it is reseted
-        this.slideTimeout = setTimeout(() => {this.automaticSlide()}, 5000);
+        this.slideTimeout = setTimeout(() => {this.automaticSlide("keep on")}, 5000);
     }    
 }
 

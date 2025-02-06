@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     returnTop.addEventListener("click", function(){
         setTimeout(() => {
-            document.documentElement.scrollTop = 0;
+            //document.documentElement.scrollTop = 0;
+            window.scrollTo({top: 0, behavior: "smooth"});
         }, 200);
     });
 
@@ -84,22 +85,10 @@ document.addEventListener("DOMContentLoaded", function(){
         slider.automaticSlide();
         slider.next();
     });
-    document.getElementById("dot_1").addEventListener("click", (dot) => {
-        slider.automaticSlide();
-        slider.select(dot);
-    });
-    document.getElementById("dot_2").addEventListener("click", (dot) => {
-        slider.automaticSlide();
-        slider.select(dot);
-    });
-    document.getElementById("dot_3").addEventListener("click", (dot) => {
-        slider.automaticSlide();
-        slider.select(dot);
-    });
-    document.getElementById("dot_4").addEventListener("click", (dot) => {
-        slider.automaticSlide();
-        slider.select(dot);
-    });
+    document.getElementById("dot_1").addEventListener("click", (dot) => {jumpToDot(dot)});
+    document.getElementById("dot_2").addEventListener("click", (dot) => {jumpToDot(dot)});
+    document.getElementById("dot_3").addEventListener("click", (dot) => {jumpToDot(dot)});
+    document.getElementById("dot_4").addEventListener("click", (dot) => {jumpToDot(dot)});
     document.getElementById("dot_5").addEventListener("click", (dot) => {jumpToDot(dot)});
 
     function jumpToDot(dot){

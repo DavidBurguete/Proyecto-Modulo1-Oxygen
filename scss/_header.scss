@@ -1,5 +1,5 @@
 header{
-    position: fixed;
+    position: relative;
     width: 100%;
     top: 0;
     background-color: $white;
@@ -9,7 +9,7 @@ header{
 }
 
 #percentajeScroller{
-    position: absolute;
+    position: fixed;
     border: 2px solid $blue;
     z-index: 6;
     width: 0;

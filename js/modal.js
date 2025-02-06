@@ -31,6 +31,8 @@ export function modalOnLoad(regex){
                 alert(`Thank you for subscribing!`);            
                 closeModal();
             }).catch(() => {alert("An error occurred.\nPlease, try again.")});
+            hasAlreadyFaded = true;
+            localStorage.setItem("hasAlreadyFaded", hasAlreadyFaded);
         }
         else{
             emailNews.classList.add("subscribe__error");
@@ -53,9 +55,8 @@ export function fadeIn(){
 };
 
 function closeModal(){
-    document.getElementsByTagName("html")[0].style.overflow = "auto";
-    document.getElementsByTagName("body")[0].style.overflow = "auto";
+    document.getElementsByTagName("html")[0].style.overflow = "visible";
+    document.getElementsByTagName("body")[0].style.overflow = "visible";
     document.getElementById("newsletter").classList.remove("modal--fadeIn");
     hasAlreadyFaded = true;
-    localStorage.setItem("hasAlreadyFaded", hasAlreadyFaded);
 }

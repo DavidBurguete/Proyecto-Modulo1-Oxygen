@@ -41,17 +41,24 @@
 
 .div--basic_plan-type{
     @include plan-type($main_red);
-    bottom: 27px;
 }
 
 .div--professional_plan-type{
     @include plan-type($main_blue);
-    bottom: 20px;
 }
 
 .div--premium_plan-type{
     @include plan-type($main_turquoise);
-    bottom: 20px;
+}
+
+@media screen and (min-width: 371px) {
+    .div--basic_plan-type{
+        bottom: 27px;
+    }
+
+    .div--professional_plan-type, .div--premium_plan-type{
+        bottom: 20px;
+    }
 }
 
 .div--plan-specifications{

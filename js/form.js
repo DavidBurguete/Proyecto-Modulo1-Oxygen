@@ -21,18 +21,19 @@ function isChecked(validName, nameField, validEmail, emailField, confirmUsageOfD
         confirmUsageOfData.checked = false;
     }
     else{
-        let pleaseComplete = "Please, complete the following fields:";
-        if(!validName){
-            pleaseComplete += "\n-Name (between 2 and 100 letters)";
-        }
-        if(validEmail === null){
-            pleaseComplete += "\n-Email (in the following format: yourname@example.com)";
-        }
-        if(!confirmUsageOfData.checked){
-            pleaseComplete += "\n-Use of data";
-        }
-        pleaseComplete += "\nThank you.";
-        alert(pleaseComplete);
+        addError(nameField, validName);
+        addError(emailField, validEmail !== null);
+    }
+}
+
+function addError(field, isValid){
+    if(isValid){
+        field.classList.remove("submit__error");
+        field.parentNode.children[1].classList.add("input__error__none");
+    }
+    else{
+        field.classList.add("submit__error");
+        field.parentNode.children[1].classList.remove("input__error__none");
     }
 }
 

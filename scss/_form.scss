@@ -54,13 +54,11 @@ form{
         background:url("../img/Checkbox_Checked.png") no-repeat;
     }
 
-    //background-image: url("../img/Checkmark.png"); This part will be included with javascript
-
     .label--policy{
         position: relative;
         color: #707070;
-        font-weight: 400;
-        font-size: 12px;
+        font-weight: 400 !important;
+        font-size: 12px !important;
         line-height: 16.34px;
         display: inline-block;
         width: calc(100% - ($checkbox-size + $checbox-margin*2 + 10px));
@@ -74,6 +72,16 @@ form{
         margin: 20px;
         left: 20%;
         box-shadow: 5px 10px 14px 0px #07ACE64A;
+    }
+
+    .input__error{
+        font-size: 15px !important;
+        padding-left: 20px;
+        color: red;
+    }
+
+    .input__error__none{
+        display: none;
     }
 }
 

@@ -43,3 +43,12 @@ main{
     margin-top: 100px;
     position: relative;
 }
+
+.input__error{
+    font-size: 15px !important;
+    color: red;
+}
+
+.input__error__none{
+    display: none;
+}

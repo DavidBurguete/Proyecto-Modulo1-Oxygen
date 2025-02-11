@@ -43,6 +43,15 @@ main {
   position: relative;
 }
 
+.input__error {
+  font-size: 15px !important;
+  color: red;
+}
+
+.input__error__none {
+  display: none;
+}
+
 #returnTop {
   position: fixed;
   right: 20px;
@@ -971,12 +980,7 @@ form input[type*=submit], form input#submit {
   box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.2901960784);
 }
 form .input__error {
-  font-size: 15px !important;
   padding-left: 20px;
-  color: red;
-}
-form .input__error__none {
-  display: none;
 }
 
 @media screen and (min-width: 1000px) {
@@ -1069,10 +1073,9 @@ footer .social_media a {
 }
 .modal .modal-dialog .modal-body {
   margin: 40px auto;
-  width: 60%;
 }
 .modal .modal-dialog .modal-body input:not([type=checkbox]), .modal .modal-dialog .modal-body input:not([type=checkbox]):focus-visible {
-  width: 100%;
+  width: 60%;
   height: 40px;
   border: 0;
   border-bottom: 1px solid #95989A;

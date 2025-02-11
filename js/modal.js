@@ -36,6 +36,7 @@ export function modalOnLoad(regex){
         }
         else{
             emailNews.classList.add("subscribe__error");
+            emailNews.parentNode.children[1].classList.remove("input__error__none");
         }
     });
 }

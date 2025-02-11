@@ -38,10 +38,9 @@
 
         .modal-body{
             margin: 40px auto;
-            width: 60%;
 
             input:not([type=checkbox]), input:not([type=checkbox]):focus-visible{
-                width: 100%;
+                width: 60%;
                 height: 40px;
                 border: 0;
                 border-bottom: 1px solid $form-components-border-color;
